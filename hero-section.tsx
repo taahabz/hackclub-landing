@@ -120,32 +120,59 @@ export default function HeroSection() {
       </nav>
 
       {/* Mobile Navigation Menu */}
-      {isMenuOpen && (
-        <div className="absolute top-0 left-0 w-full h-full bg-black/90 z-30 md:hidden">
-          <div className="flex flex-col items-center justify-center h-full space-y-8">
-            {navItems.map((item) =>
-              item.isRoute ? (
-                <Link
-                  key={item.name}
-                  href={item.href}
-                  onClick={() => setIsMenuOpen(false)}
-                  className="text-white text-2xl font-bold tracking-wider hover:text-gray-300 transition-colors duration-300"
-                >
-                  {item.name}
-                </Link>
-              ) : (
-                <button
-                  key={item.name}
-                  onClick={() => scrollToSection(item.href, item.isRoute)}
-                  className="text-white text-2xl font-bold tracking-wider hover:text-gray-300 transition-colors duration-300"
-                >
-                  {item.name}
-                </button>
-              ),
-            )}
-          </div>
+      <div
+        className={`fixed top-0 left-0 w-full h-full bg-black/95 backdrop-blur-sm z-30 md:hidden transition-transform duration-500 ease-in-out ${
+          isMenuOpen ? "translate-x-0" : "translate-x-full"
+        }`}
+      >
+        {/* Close Button */}
+        <button
+          className={`absolute top-6 right-6 text-white hover:text-gray-300 transition-all duration-300 ${
+            isMenuOpen ? "opacity-100 rotate-0" : "opacity-0 rotate-90"
+          }`}
+          onClick={() => setIsMenuOpen(false)}
+          aria-label="Close menu"
+        >
+          <X size={28} />
+        </button>
+
+        <div className="flex flex-col items-center justify-center h-full space-y-8">
+          {navItems.map((item, index) =>
+            item.isRoute ? (
+              <Link
+                key={item.name}
+                href={item.href}
+                onClick={() => setIsMenuOpen(false)}
+                className={`text-white text-2xl font-bold tracking-wider hover:text-gray-300 transition-all duration-500 ${
+                  isMenuOpen
+                    ? "opacity-100 translate-x-0"
+                    : "opacity-0 translate-x-8"
+                }`}
+                style={{
+                  transitionDelay: isMenuOpen ? `${index * 80}ms` : "0ms",
+                }}
+              >
+                {item.name}
+              </Link>
+            ) : (
+              <button
+                key={item.name}
+                onClick={() => scrollToSection(item.href, item.isRoute)}
+                className={`text-white text-2xl font-bold tracking-wider hover:text-gray-300 transition-all duration-500 ${
+                  isMenuOpen
+                    ? "opacity-100 translate-x-0"
+                    : "opacity-0 translate-x-8"
+                }`}
+                style={{
+                  transitionDelay: isMenuOpen ? `${index * 80}ms` : "0ms",
+                }}
+              >
+                {item.name}
+              </button>
+            ),
+          )}
         </div>
-      )}
+      </div>
 
       {/* Hero Content */}
       <div className="relative z-10 flex h-full items-center justify-center px-6">
