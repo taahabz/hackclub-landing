@@ -131,7 +131,7 @@ export default function Page() {
           finalClipPercentage={70}
         />
       </section>
-      <Chatbot />
+      {/* <Chatbot /> */}
     </div>
   )
 }

@@ -28,7 +28,7 @@ export function Timeline({ entries, className }: TimelineProps) {
   return (
     <div ref={containerRef} className={cn("relative", className)}>
       {/* Central Timeline Line */}
-      <div className="absolute left-1/2 top-0 bottom-0 w-0.5 bg-gray-300 transform -translate-x-1/2 hidden md:block" />
+      <div className="absolute left-1/2 top-0 bottom-0 w-0.5 bg-border transform -translate-x-1/2 hidden md:block transition-colors duration-300" />
 
       {entries.map((entry, index) => (
         <TimelineItem key={entry.id} entry={entry} index={index} scrollProgress={scrollYProgress} />
@@ -58,7 +58,7 @@ function TimelineItem({ entry, index, scrollProgress }: TimelineItemProps) {
   return (
     <motion.div ref={itemRef} style={{ opacity, scale }} className="relative mb-20 md:mb-32">
       {/* Timeline Dot */}
-      <div className="absolute left-1/2 top-1/2 w-4 h-4 bg-gray-900 rounded-full transform -translate-x-1/2 -translate-y-1/2 z-10 hidden md:block" />
+      <div className="absolute left-1/2 top-1/2 w-4 h-4 bg-primary rounded-full transform -translate-x-1/2 -translate-y-1/2 z-10 hidden md:block transition-colors duration-300" />
 
       <div className="container mx-auto px-6">
         <div
@@ -74,7 +74,7 @@ function TimelineItem({ entry, index, scrollProgress }: TimelineItemProps) {
             })}
           >
             <div className="sticky top-20">
-              <div className="relative overflow-hidden rounded-2xl aspect-[3/4] bg-gray-100 scale-90">
+              <div className="relative overflow-hidden rounded-2xl aspect-[3/4] bg-muted scale-90 transition-colors duration-300">
                 <img
                   src={entry.image || "/placeholder.svg"}
                   alt={entry.alt}
@@ -100,10 +100,10 @@ function TimelineItem({ entry, index, scrollProgress }: TimelineItemProps) {
                 viewport={{ once: true }}
                 className="space-y-6"
               >
-                <h3 className="text-3xl md:text-4xl lg:text-5xl font-black tracking-wide text-gray-900">
+                <h3 className="text-3xl md:text-4xl lg:text-5xl font-black tracking-wide text-foreground transition-colors duration-300">
                   {entry.title}
                 </h3>
-                <p className="text-lg md:text-xl leading-relaxed text-gray-700 max-w-lg">{entry.description}</p>
+                <p className="text-lg md:text-xl leading-relaxed text-foreground/80 max-w-lg transition-colors duration-300">{entry.description}</p>
               </motion.div>
             </div>
           </div>

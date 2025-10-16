@@ -13,9 +13,9 @@ const instrumentSerif = Instrument_Serif({
 })
 
 export const metadata: Metadata = {
-  title: 'v0 App',
-  description: 'Created with v0',
-  generator: 'v0.app',
+  title: 'HackClub',
+  description: 'Join HackClub NUST - where coding is a superpower. Connect with passionate coders, build amazing projects, and push your boundaries.',
+  generator: 'HackClub NUST',
 }
 
 export default function RootLayout({
@@ -26,6 +26,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
+        <link rel="icon" href="/images/logo light without text.png" type="image/png" />
         <style>{`
 html {
   font-family: ${GeistSans.style.fontFamily};
