@@ -4,6 +4,7 @@ import { GeistMono } from 'geist/font/mono'
 import { Instrument_Serif } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import { ThemeProvider } from '@/components/theme-provider'
+import { SmoothScrollProvider } from '@/components/smooth-scroll-provider'
 import './globals.css'
 
 const instrumentSerif = Instrument_Serif({
@@ -43,7 +44,9 @@ html {
           enableSystem
           disableTransitionOnChange={false}
         >
-          {children}
+          <SmoothScrollProvider>
+            {children}
+          </SmoothScrollProvider>
         </ThemeProvider>
         <Analytics />
       </body>
