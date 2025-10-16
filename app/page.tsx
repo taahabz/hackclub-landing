@@ -16,38 +16,56 @@ export default function Page() {
   const timelineEntries = [
     {
       id: 1,
-      image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-RJ3iTXUn5SUexF6nHMZYhMoQLNCboK.png",
-      alt: "Office Bearer 1",
-      title: "Office Bearer 1",
+      image: "/images/officebearers/president.png",
+      alt: "President",
+      title: "President",
       description:
-        "President - Leading Hack Club NUST with vision and dedication. Passionate about building a strong coding community and empowering every member to reach their full potential.",
+        "Leading Hack Club NUST with vision and dedication. Passionate about building a strong coding community and empowering every member to reach their full potential.",
       layout: "left" as const,
     },
     {
       id: 2,
-      image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-LN9OPh9hw0b9rwSPRSslHoejcfoKHe.png",
-      alt: "Office Bearer 2",
-      title: "Office Bearer 2",
+      image: "/images/officebearers/GS.png",
+      alt: "General Secretary",
+      title: "General Secretary",
       description:
-        "Vice President - Supporting the club's mission and coordinating events. Committed to fostering collaboration and innovation within our coding community.",
+        "Managing club operations and communications. Ensuring smooth coordination between teams and keeping everyone connected and informed.",
       layout: "right" as const,
     },
     {
       id: 3,
-      image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-1FdGyjVpWQANGzsDWpoPIvF5SVI2za.png",
-      alt: "Office Bearer 3",
-      title: "Office Bearer 3",
+      image: "/images/officebearers/PS.png",
+      alt: "Press Secretary",
+      title: "Press Secretary",
       description:
-        "General Secretary - Managing club operations and communications. Ensuring smooth coordination between teams and keeping everyone connected and informed.",
+        "Supporting the club's mission and coordinating events. Committed to fostering collaboration and innovation within our coding community.",
       layout: "left" as const,
     },
     {
       id: 4,
-      image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-RJ3iTXUn5SUexF6nHMZYhMoQLNCboK.png",
-      alt: "Office Bearer 4",
-      title: "Office Bearer 4",
+      image: "/images/officebearers/treasuerer.png",
+      alt: "Treasurer",
+      title: "Treasurer",
       description:
-        "Treasurer - Managing club finances and resources. Dedicated to ensuring sustainable growth and providing members with the best tools and opportunities.",
+        "Managing club finances and resources. Dedicated to ensuring sustainable growth and providing members with the best tools and opportunities.",
+      layout: "right" as const,
+    },
+    {
+      id: 5,
+      image: "/images/officebearers/JS-to-president.png",
+      alt: "JS to President",
+      title: "JS to President",
+      description:
+        "Assisting the President and supporting club initiatives. Focused on elevating coding skills and driving innovative solutions across all initiatives.",
+      layout: "left" as const,
+    },
+    {
+      id: 6,
+      image: "/images/officebearers/JS-to-tresurer.png",
+      alt: "JS to Treasurer",
+      title: "JS to Treasurer",
+      description:
+        "Supporting financial operations and resource management. Passionate about creating engaging experiences that bring our community together and inspire creativity.",
       layout: "right" as const,
     },
   ]
@@ -125,8 +143,8 @@ export default function Page() {
       <section id="join" className="relative">
         <SmoothScrollHero
           scrollHeight={2500}
-          desktopImage="/images/runners-motion-blur.png"
-          mobileImage="/images/runners-motion-blur.png"
+          desktopImage="/images/hero-1.jpg"
+          mobileImage="/images/hero-1.jpg"
           initialClipPercentage={30}
           finalClipPercentage={70}
         />

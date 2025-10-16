@@ -76,7 +76,7 @@ const SmoothScrollHero: React.FC<SmoothScrollHeroProps> = ({
         />
 
         {/* Dark overlay for better contrast */}
-        <div className="absolute inset-0 bg-black/40" />
+        <div className="absolute inset-0 bg-black/75" />
 
         {/* CTA Overlay */}
         <motion.div
